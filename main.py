@@ -11,10 +11,16 @@ SCREEN_HEIGHT = 600
 SCREEN_CENTER = 400, 300
 
 # Circle
-circle = pygame.image.load(os.path.join("data", "circle.png"))
+'''circle = pygame.image.load(os.path.join("data", "circle.png"))
 circle = pygame.transform.scale(circle, (128, 128))
 circlerect = circle.get_rect()
-circlerect.center = (SCREEN_CENTER)
+circlerect.center = (SCREEN_CENTER)'''
+
+# PLAYER
+player = pygame.image.load(os.path.join("data", "dinossaur.png"))
+player = pygame.transform.scale(player, (128, 128))
+player_rect = player.get_rect()
+player_rect.center = (SCREEN_CENTER)
 
 #pygame setup
 pygame.init()
@@ -26,7 +32,7 @@ running = True
 delta_time = 0
 
 # PLAYER
-player_x = 400
+player_x = 350
 player_y = 300
 speed = 10
 right_key = pygame.K_d
@@ -37,7 +43,7 @@ down_key = pygame.K_s
 while True:
     #fill the screen with a color to wipe away anything from last frame
     screen.fill("gray")
-    screen.blit(circle, (player_x, player_y))
+    screen.blit(player, (player_x, player_y))
     pygame.display.flip()
 
     keys = pygame.key.get_pressed()
